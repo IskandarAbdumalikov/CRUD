@@ -1,0 +1,90 @@
+#hero {
+  padding-top: 200px;
+}
+
+body {
+  background: linear-gradient(90deg, blue, aqua, blue);
+}
+.loading__item,
+.card {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background: $secondaryColor;
+  border-radius: 15px;
+}
+
+span {
+  color: blue;
+}
+.loading__img,
+.card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(0.7);
+}
+
+.card .info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease;
+  transform: translateY(100%);
+}
+
+p,
+h2 {
+  color: $secondaryColor;
+}
+
+.card:hover .info {
+  transform: translateY(0);
+}
+
+.loading,
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.loading__title {
+  width: 80%;
+  height: 26px;
+  margin-top: 10px;
+}
+
+.loading__title:last-child {
+  width: 60%;
+}
+
+.bg__animation {
+  background: linear-gradient(90deg, #eee, #ddd, #eee);
+  background-size: 200%;
+  animation: bgMove 1s linear 0s infinite;
+}
+@keyframes bgMove {
+  to {
+    background-position: 200%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .loading,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
